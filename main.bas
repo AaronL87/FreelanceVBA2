@@ -188,11 +188,20 @@ Set sh2 = wb.Sheets("inUse Check")
 
 sh2.Cells(1, 1) = "DN"
 sh2.Cells(1, 2) = "inUse okay?"
+sh2.Cells(1, 3) = "ID1"
+sh2.Cells(1, 4) = "ID2"
+sh2.Cells(1, 5) = "ID3"
+sh2.Cells(1, 6) = "ID4"
+sh2.Cells(1, 7) = "ID5"
+sh2.Cells(1, 8) = "ID6"
+sh2.Cells(1, 9) = "ID7"
+sh2.Cells(1, 10) = "ID8"
 
 r2 = 2
 
 r = 3
 DN_val = Trim(sh.Cells(r, 20))
+descr_val = Trim(sh.Cells(r, 14))
 inUse_val = Trim(sh.Cells(r, 15))
 portId_val = Trim(sh.Cells(r, 17))
 
@@ -248,6 +257,47 @@ Do Until DN_val = ""
             sh2.Cells(r2, 2) = "error"
         End If
         
+        If okay1 = 1 Then
+            sh2.Cells(r2, 3) = "okay"
+        Else
+            sh2.Cells(r2, 3) = "error"
+        End If
+        If okay2 = 1 Then
+            sh2.Cells(r2, 4) = "okay"
+        Else
+            sh2.Cells(r2, 4) = "error"
+        End If
+        If okay3 = 1 Then
+            sh2.Cells(r2, 5) = "okay"
+        Else
+            sh2.Cells(r2, 5) = "error"
+        End If
+        If okay4 = 1 Then
+            sh2.Cells(r2, 6) = "okay"
+        Else
+            sh2.Cells(r2, 6) = "error"
+        End If
+        If okay5 = 1 Then
+            sh2.Cells(r2, 7) = "okay"
+        Else
+            sh2.Cells(r2, 7) = "error"
+        End If
+        If okay8 = 1 Then
+            sh2.Cells(r2, 8) = "okay"
+        Else
+            sh2.Cells(r2, 8) = "error"
+        End If
+        If okay9 = 1 Then
+            sh2.Cells(r2, 9) = "okay"
+        Else
+            sh2.Cells(r2, 9) = "error"
+        End If
+        If okay16 = 1 Then
+            sh2.Cells(r2, 10) = "okay"
+        Else
+            sh2.Cells(r2, 10) = "error"
+        End If
+        
         okay1 = 0
         okay2 = 0
         okay3 = 0
@@ -262,6 +312,7 @@ Do Until DN_val = ""
     
     r = r + 1
     DN_val = Trim(sh.Cells(r, 20))
+    descr_val = Trim(sh.Cells(r, 14))
     inUse_val = Trim(sh.Cells(r, 15))
     portId_val = Trim(sh.Cells(r, 17))
 Loop
